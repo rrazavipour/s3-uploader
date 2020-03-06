@@ -1,0 +1,10 @@
+tabWidth: 4
+singleQuote: true
+bracketSpacing: false
+printWidth: 80
+semi: true
+quoteProps: as-needed
+trailingComma: none
+rangeStart: 0
+parser: "typescript"
+
