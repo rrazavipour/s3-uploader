@@ -1,9 +1,5 @@
 import AWS from 'aws-sdk';
-import {
-    lookupBucketName,
-    lookupBucketRegion,
-    RuntimeSettings
-} from './runtime-settings';
+import { lookupBucketName, lookupBucketRegion } from './runtime-settings';
 export const uploadObject = async (
     details: BucketDetails,
     body: Buffer,
@@ -29,8 +25,8 @@ export const uploadObject = async (
 export const getBucketDetails = async (name: string) => {
     const s3 = new AWS.S3({
         region: lookupBucketRegion,
-        accessKeyId: RuntimeSettings.AWSAccessKeyId,
-        secretAccessKey: RuntimeSettings.AWSSecretKey
+        accessKeyId: process.env.accessKeyId,
+        secretAccessKey: process.env.secretAccessKey
     });
 
     const params = {
